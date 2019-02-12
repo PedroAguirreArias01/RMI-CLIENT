@@ -82,7 +82,6 @@ public class VentanaChat extends javax.swing.JFrame implements InterfazCliente {
         
         areaMensajes.append(mensaje + "\n");
         
-        
         System.out.println("Mensaje recibido de " + mensaje);
        
         

@@ -7,8 +7,6 @@ package co.edu.uptc.chatRMI;
  */
 
 
-import co.edu.uptc.chatRMI.VentanaChat;
-import java.rmi.AccessException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -31,8 +29,8 @@ public class VentanaRegistrar extends javax.swing.JFrame {
      * Creates new form VentanaRegistrar
      */
     public VentanaRegistrar() {
-        System.setProperty("java.security.policy","file:G:/UPTC/Docencia/2018-02/SistemasDistribuidos/Talleres/ChatRMIServer/server.policy");
-        System.setProperty("java.rmi.server.codebase","file:/G:/UPTC/Docencia/2018-02/SistemasDistribuidos/Talleres/ChatRMIClient/build/classes/co/edu/uptc/ChatRMI");
+        System.setProperty("java.security.policy","file:C:/Users/PEDRO/Desktop/RMI-SERVER/RMI-SERVER/server.policy");
+        System.setProperty("java.rmi.server.codebase","file:/C:/Users/PEDRO/Desktop/RMI-SERVER/RMI-SERVER/build/classes/co/edu/uptc/chatRMI");
         initComponents();
     }
     
@@ -44,7 +42,7 @@ public class VentanaRegistrar extends javax.swing.JFrame {
         try {
             Registry registry = LocateRegistry.getRegistry();
             System.out.print("Buscando el objeto remoto...");
-            String nombre_objeto_remoto = "//127.0.0.1/servidor";
+            String nombre_objeto_remoto = "//localhost/servidor";
             instancia_local = (InterfazServidor) registry.lookup(nombre_objeto_remoto);
             System.out.println("Objeto remoto encontrado");
             
